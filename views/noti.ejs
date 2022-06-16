@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css\remove.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Enter Your Request</title>
+</head>
+<body background="images\bok.jpg">
+    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; MENU</span>
+    <center><h1 style="margin-top: -50px;">Request</h1></center>
+    <center><h1>Welcome</h1></center><br>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="/dashboardadmin" class="active">Add Subjects</a>
+        <a href="/remove">Remove Subjects</a>
+        <a href="/noti">Notifications</a>
+        <a href="/">Logout</a> 
+    </div>
+    <div class="container">
+            <table border="1">
+                <tr>
+                    <th>S.No</th>
+                    <th>Student Name</th>
+                    <th>Student email</th>
+                    <!-- <th>Student phone</th> -->
+                    <th>Subjects</th>
+                </tr>
+                <%
+                if(r.length!=0){ 
+                var i=1;
+                r.forEach(function(data){
+                %>
+                <tr>
+                    <td><%=i; %></td>
+                    <td><%=data.sname %></td>
+                    <td><%=data.semail %></td>
+                    <!-- <td><%=data.sphone %></td> -->
+                    <td><%=data.tsub %></td>
+                </tr>
+                <%  i++; }) %>
+                <% } else{ %>
+                    <tr>
+                        <td colspan="7">No Data Found</td>
+                    </tr>
+                <% } %>
+            </table>
+        </div>
+    <script>
+        function openNav() {
+          document.getElementById("mySidenav").style.width = "250px";
+        }
+        
+        function closeNav() {
+          document.getElementById("mySidenav").style.width = "0";
+        }
+        </script>
+</body>
+</html>

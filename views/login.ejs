@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finding Tutors</title>
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="js/login.js"></script>
+</head>
+<body background="images\bok.jpg">
+    <center><h1>Finding Tutors</h1></center><br>
+    <div class="container">
+        <div class="head">
+            <h1>Login</h1><br>
+            <form method="post" action="/validatelogin" class="form" name="myForm" autocomplete="on">
+                <p class="para"><%=msg%></p>
+                <input type="text" name="email" placeholder="Email" onblur="checkem()"> <br>
+                <p id="em" class="para">&nbsp</p>
+                <input type="password" name="pass" placeholder="Password" disabled onblur="checkpa()"> <br>
+                <input type ="radio" name="but" value="0">student &nbsp
+                <input type ="radio" name="but" value="1">tutor &nbsp <br>
+                <p id="pn" class="para">&nbsp</p>
+                <button type="submit" class="btn btn-primary" id="butt" disabled>Login</button>
+                <a href="/signup"><button type="button" class="btn btn-primary">sign up</button></a>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
